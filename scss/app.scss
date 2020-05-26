@@ -1,0 +1,272 @@
+@import 'screen_size';
+
+/* CSS Document */
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;
+}
+
+header{
+    padding: 0;
+}
+
+//Styles for the menu text on mobile screens. 
+.menu-text{
+    @include screenSize(small){
+        display: block;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        padding: 18px 0;
+        color: #f2f2f2;
+        text-decoration: none;
+        letter-spacing: .2vh;
+    }
+    @include screenSize(medium){
+        display: none;
+    }
+    @include screenSize(large){
+        display: none;
+    }
+}
+
+/**Start nav styles**/
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2d9aff;
+    letter-spacing: .2vh;
+}
+
+/* Float the list items side by side */
+
+ul.topnav li {
+    float: left;
+    @include screenSize(small){
+        display: none;
+    }
+
+    //Takes advantage of nth-child to make the "gaps" in the navbar
+    @include screenSize(medium){
+        &:nth-child(2){
+            display: none;
+        }
+        &:nth-child(3){
+            border-right: 2px solid white;
+        }
+        &:nth-child(5){
+            border-left: 2px solid white;
+        }
+    }
+}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: block;
+    color: #f2f2f2;
+    padding: 18px 50px;
+    text-decoration: none;
+    transition: 0.3s;
+
+    @include screenSize(small){
+        padding: 18px;
+    }
+    /* Change background color of links on hover */
+    &:hover{
+        background-color:#0a75be;
+    }
+}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+
+ul.topnav li.icon {
+    @include screenSize(medium){
+        display: none;
+    }
+}
+
+ul.topnav li.icon {
+    @include screenSize(small){
+        position:relative;
+        float: left;
+        display: block;
+        z-index: 1;
+        background-color:transparent;
+
+        &:hover{
+            background-color:transparent;
+        }
+
+        &:selection{
+            color:none;
+            background:none;
+        }
+    }
+}
+
+.topnav a.icon {
+    @include screenSize(small){
+        float: left;
+        display: block;
+        z-index: 1;
+    }
+}
+
+ul.topnav li.icon a{
+    background-color:transparent;
+
+    &:hover{
+        background-color:transparent;
+    }
+}
+
+
+
+.dropdown {
+    float: none;
+    overflow: hidden; 
+}
+
+//Style the "button" we use (an a tag) to match the list styles
+
+.dropdown .dropbtn {
+    font-size: 15px;    
+    outline: none;
+    color: #f2f2f2;
+    padding: 18px 50px;
+    background-color: inherit;
+    margin: 0;
+
+    @include screenSize(small){
+        display: none;
+    }
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2d9aff;
+
+    @include screenSize(small){
+        width: 100%;
+    }
+
+    @include screenSize(medium){
+        margin-top: 2px;
+        width: 100%;
+        left: 0;
+    }
+
+    @include screenSize(large){
+        width: 10.8em;
+        left: auto;
+    }
+}
+
+ul.topnav li .dropdown-content a {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 18px 50px;
+    text-decoration: none;
+
+    @include screenSize(medium){
+        display: inline-block;
+    }
+
+    @include screenSize(large){
+        display: block;
+    }
+
+    &:hover{
+        background-color: #0a75be;
+        color: #f2f2f2;
+    }
+}
+
+//Styles for mobiles screens when menu is toggled
+
+ul.topnav.responsive {
+    @include screenSize(small){
+        position: relative;
+    }
+}
+
+ul.topnav.responsive li {
+    @include screenSize(small){
+        float: none;
+        display: block;
+
+        //Takes advantage of nth-child to make the "gaps" in the navbar
+        &:nth-child(2){
+            border-bottom: 2px solid white;;
+        }
+
+        &:nth-child(3){
+            border-bottom: 2px solid white;
+        }
+        
+        &:nth-child(5){
+            border-top: 2px solid white;
+        }
+    }
+}
+
+ul.topnav.responsive li a {
+    @include screenSize(small){
+        display: block;
+        text-align: center;
+    }
+}
+
+ul.topnav.responsive li.icon {
+    @include screenSize(small){
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+}
+
+.topnav.responsive .dropdown-content {
+    @include screenSize(small){
+        position: relative;
+    }
+}
+
+.topnav.responsive .dropdown .dropbtn {
+    @include screenSize(small){
+        display: block;
+        text-align: center;
+        position: relative;
+        padding: 16px;
+    }
+}
+
+.dropdown:hover .dropdown-content {
+    @include screenSize(medium){
+        display: block;
+    }
+}
+
+/**End of nav styles**/
+
+//Utility classes
+.show {
+    display: block; 
+}
+
+.no-select {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+

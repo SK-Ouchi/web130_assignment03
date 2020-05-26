@@ -1,0 +1,266 @@
+/** sizes of screen:
+ * - small: < 40em
+ * - medium: 40em < 64em
+ * - large: >64em
+**/
+/* CSS Document */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inconsolata", monospace;
+}
+
+header {
+  padding: 0;
+}
+
+@media screen and (max-width: 39.99em) {
+  .menu-text {
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 18px 0;
+    color: #f2f2f2;
+    text-decoration: none;
+    letter-spacing: 0.2vh;
+  }
+}
+@media screen and (min-width: 34em) {
+  .menu-text {
+    display: none;
+  }
+}
+@media screen and (min-width: 64em) {
+  .menu-text {
+    display: none;
+  }
+}
+
+/**Start nav styles**/
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2d9aff;
+  letter-spacing: 0.2vh;
+}
+
+/* Float the list items side by side */
+ul.topnav li {
+  float: left;
+}
+@media screen and (max-width: 39.99em) {
+  ul.topnav li {
+    display: none;
+  }
+}
+@media screen and (min-width: 34em) {
+  ul.topnav li:nth-child(2) {
+    display: none;
+  }
+  ul.topnav li:nth-child(3) {
+    border-right: 2px solid white;
+  }
+  ul.topnav li:nth-child(5) {
+    border-left: 2px solid white;
+  }
+}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+  display: block;
+  color: #f2f2f2;
+  padding: 18px 50px;
+  text-decoration: none;
+  transition: 0.3s;
+  /* Change background color of links on hover */
+}
+@media screen and (max-width: 39.99em) {
+  ul.topnav li a {
+    padding: 18px;
+  }
+}
+ul.topnav li a:hover {
+  background-color: #0a75be;
+}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+@media screen and (min-width: 34em) {
+  ul.topnav li.icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 39.99em) {
+  ul.topnav li.icon {
+    position: relative;
+    float: left;
+    display: block;
+    z-index: 1;
+    background-color: transparent;
+  }
+  ul.topnav li.icon:hover {
+    background-color: transparent;
+  }
+  ul.topnav li.icon:selection {
+    color: none;
+    background: none;
+  }
+}
+
+@media screen and (max-width: 39.99em) {
+  .topnav a.icon {
+    float: left;
+    display: block;
+    z-index: 1;
+  }
+}
+
+ul.topnav li.icon a {
+  background-color: transparent;
+}
+ul.topnav li.icon a:hover {
+  background-color: transparent;
+}
+
+.dropdown {
+  float: none;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 15px;
+  outline: none;
+  color: #f2f2f2;
+  padding: 18px 50px;
+  background-color: inherit;
+  margin: 0;
+}
+@media screen and (max-width: 39.99em) {
+  .dropdown .dropbtn {
+    display: none;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2d9aff;
+}
+@media screen and (max-width: 39.99em) {
+  .dropdown-content {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 34em) {
+  .dropdown-content {
+    margin-top: 2px;
+    width: 100%;
+    left: 0;
+  }
+}
+@media screen and (min-width: 64em) {
+  .dropdown-content {
+    width: 10.8em;
+    left: auto;
+  }
+}
+
+ul.topnav li .dropdown-content a {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 18px 50px;
+  text-decoration: none;
+}
+@media screen and (min-width: 34em) {
+  ul.topnav li .dropdown-content a {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 64em) {
+  ul.topnav li .dropdown-content a {
+    display: block;
+  }
+}
+ul.topnav li .dropdown-content a:hover {
+  background-color: #0a75be;
+  color: #f2f2f2;
+}
+
+@media screen and (max-width: 39.99em) {
+  ul.topnav.responsive {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 39.99em) {
+  ul.topnav.responsive li {
+    float: none;
+    display: block;
+  }
+  ul.topnav.responsive li:nth-child(2) {
+    border-bottom: 2px solid white;
+  }
+  ul.topnav.responsive li:nth-child(3) {
+    border-bottom: 2px solid white;
+  }
+  ul.topnav.responsive li:nth-child(5) {
+    border-top: 2px solid white;
+  }
+}
+
+@media screen and (max-width: 39.99em) {
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 39.99em) {
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 39.99em) {
+  .topnav.responsive .dropdown-content {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 39.99em) {
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    text-align: center;
+    position: relative;
+    padding: 16px;
+  }
+}
+
+@media screen and (min-width: 34em) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+/**End of nav styles**/
+.show {
+  display: block;
+}
+
+.no-select {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*# sourceMappingURL=app.css.map */

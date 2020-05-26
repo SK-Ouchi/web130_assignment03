@@ -1,0 +1,17 @@
+/** sizes of screen:
+ * - small: < 40em
+ * - medium: 40em < 64em
+ * - large: >64em
+**/
+/* CSS Document */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inconsolata", monospace;
+}
+
+header {
+  padding: 0;
+}
+
+/*# sourceMappingURL=nav2.css.map */
